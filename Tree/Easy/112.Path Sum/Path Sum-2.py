@@ -16,8 +16,7 @@ class Solution(object):
             return False
         elif not root.left and not root.right and root.val == sum:
             return True
-        for child in (root.left, root.right):
-            if child:
-                if self.hasPathSum(child, sum - root.val):
-                    return True
-        return False
+        return any(
+            child and self.hasPathSum(child, sum - root.val)
+            for child in (root.left, root.right)
+        )

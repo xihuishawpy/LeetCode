@@ -14,7 +14,7 @@ class Solution(object):
         if not t:
             return ''
         if not t.left and not t.right:
-            return str(t.val) + ''
+            return f'{str(t.val)}'
         if not t.right:  
-            return '{}({})'.format(t.val, self.tree2str(t.left))
-        return '{}({})({})'.format(t.val, self.tree2str(t.left), self.tree2str(t.right))
+            return f'{t.val}({self.tree2str(t.left)})'
+        return f'{t.val}({self.tree2str(t.left)})({self.tree2str(t.right)})'
