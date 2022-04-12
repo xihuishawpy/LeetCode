@@ -9,7 +9,6 @@ class Solution(object):
         for i in range(1,n):
             result = []
             while s:
-                cout = {}
                 s_len = len(s)
                 for i in range(s_len):
                     if s[i] !=  s[0]:
@@ -17,13 +16,15 @@ class Solution(object):
                         break
                     else:
                         index = s_len - 1
- 
-                cout[int(s[0])] = index + 1
+
+                cout = {int(s[0]): index + 1}
                 result.append(cout)
                 s = s[index + 1:]
-            s = ''
-            for each in result:
-                s += str(list(each.values())[0]) + str(list(each.keys())[0])
+            s = ''.join(
+                str(list(each.values())[0]) + str(list(each.keys())[0])
+                for each in result
+            )
+
         return s
 
 #与傻瓜方法一样，区别在于匹配使用正则表达式匹配

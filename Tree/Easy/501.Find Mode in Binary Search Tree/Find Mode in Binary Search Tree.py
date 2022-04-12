@@ -22,10 +22,7 @@ class Solution(object):
                 now = now.left
             now = s.pop(len(s) - 1)
             if pre:
-                if now.val == pre.val:
-                    cnt = cnt + 1
-                else:
-                    cnt = 1
+                cnt = cnt + 1 if now.val == pre.val else 1
             if cnt >= mx:
                 if cnt > mx:
                     del res[:]

@@ -25,7 +25,7 @@ class Solution(object):
         k = listlength - k
         tail.next = head
         newlist = head
-        for each in range(k - 1):
+        for _ in range(k - 1):
             newlist = newlist.next
         head = newlist.next
         newlist.next = None
